@@ -3,7 +3,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   font-family: "Roboto";
 }
 img {
@@ -74,41 +74,75 @@ body > div {
 
 /* this part for the header */
 .header {
-  display: grid;
+  user-select: none;
   box-shadow: 0px 5px 5px rgb(128, 110, 110);
+  display: grid;
+  gap: 10px;
+  padding: 10px;
 }
 .notification {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+  padding: 10px;
 }
 .searching {
   display: grid;
-  gap: 20px;
   grid-template-columns: 1fr 4fr;
+  gap: 1px;
 }
 .searching > label {
-  padding: 5px;
-  padding-top: 9px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
   justify-self: end;
   align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.searching > label:hover,
+.searching > input:hover {
+  border: 2px solid #1e3a8a;
+  transform: scale(101%);
+  transition: all 0.1s ease-in;
 }
 .searching > input {
-  align-self: center;
-  /* ?? this justify is good but I don't know how it's like this */
-  /* justify-self: start; */
-
-  /* outline: none; */
-  /* border: none; */
-  border-radius: 5px;
-  background-color: #dfbfbf;
   height: 30px;
+  cursor: pointer;
+  background-color: #dfbfbf;
+  align-self: center;
+  border: none;
+  border-radius: 20px;
   padding: 10px;
+}
+.searching > input:focus {
+  background-color: #ad3bbe;
+  color: #fff;
+  outline: none;
+  border: 2px solid #1e3a8a;
 }
 .notification > .Profile {
   display: grid;
   grid-template-columns: 3fr 1fr 3fr;
   gap: 30px;
+}
+.bell-ring,
+.Profile-picture {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bell-ring:hover,
+.Profile-picture:hover {
+  cursor: pointer;
+  border: 2px solid #1e3a8a;
+  transform: scale(106%);
+  transition: all 0.1s ease-in;
 }
 .bell-ring {
   place-self: center end;
@@ -117,13 +151,86 @@ body > div {
   place-self: center;
 }
 .Profile-name {
-  place-self: center start;
+  cursor: pointer;
+  font-weight: 700;
+  width: 80%;
+  height: 80%;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+.Profile-name:hover {
+  border: 2px solid #1e3a8a;
+  transform: scale(106%);
 }
 .status {
+  padding: 10px;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
 }
-
+.banner {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 3fr;
+  gap: 10px;
+}
+.banner img {
+  width: 80%;
+  border-radius: 50%;
+  grid-row: span 2;
+  justify-self: end;
+}
+.banner img:hover {
+  cursor: pointer;
+  transform: scale(106%);
+  border: 2px solid #1e3a8a;
+  transition: all 0.1s ease-in;
+}
+.banner span {
+  user-select: all;
+  font-weight: 700;
+}
+.banner span::selection {
+  background-color: #60a5fa;
+}
+.banner > span > a {
+  font-size: 28px;
+  font-weight: 700;
+  user-select: none;
+  text-decoration: none;
+}
+.banner .greeting {
+  align-self: flex-end;
+}
+.banner .account-name {
+  font-size: 28px;
+}
+.updateStatus {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+.updateStatus .New {
+  justify-self: end;
+}
+.updateStatus .Upload {
+  justify-self: center;
+}
+.updateStatus button {
+  width: 80%;
+  background-color: #60a5fa;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+.updateStatus button:hover {
+  border: 2px solid #1e3a8a;
+  transform: scale(105%);
+  transition: all 0.1s ease-in;
+}
 /* this is for the main container */
 .mainContainer {
   display: grid;

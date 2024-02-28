@@ -5,3 +5,4 @@
   - this div is grid 1fr 2fr and align-items center (gap 10px)
   - the homeButton img width fit content
   - the functions and settings img justify-self end.
+  - when input is setting hover in css file, the label is also considered as part of input, but it's just effect input, not label, so label still have to have hover effect of its own.
