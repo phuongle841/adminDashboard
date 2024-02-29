@@ -3,7 +3,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* border: 1px solid #000; */
   font-family: "Roboto";
 }
 img {
@@ -26,11 +25,8 @@ body > div {
   background-color: #60a5fa;
   grid-row: 1 / span 2;
   display: grid;
-  grid-template-rows: 1fr 3fr 3fr;
+  grid-template-rows: 150px repeat(2, 1fr);
   gap: 80px;
-}
-.homeButton {
-  border: 2px solid #fff;
 }
 .functions,
 .setting {
@@ -73,8 +69,6 @@ body > div {
 /* this part for the header */
 .header {
   user-select: none;
-  /* box-shadow: 0px 5px 5px rgb(128, 110, 110); */
-  box-shadow: 0px 1px 5px #272727;
   z-index: 2;
   display: grid;
   gap: 10px;
@@ -121,7 +115,7 @@ body > div {
   background-color: #ad3bbe;
   color: #fff;
   outline: none;
-  border: 2px solid #1e3a8a;
+  border: 2px solid #415fb1dc;
 }
 .notification > .Profile {
   display: grid;
@@ -256,9 +250,8 @@ body > div {
   padding: 15px;
   gap: 15px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 1fr);
-  grid-auto-rows: 250px;
 }
 .content > .Post {
   background-color: #ffffff;
@@ -385,17 +378,30 @@ body > div {
   padding: 20px;
   gap: 10px;
 }
-.Trending > .account {
-}
-.account > .RecommendAccount {
+
+.RecommendAccount {
+  padding: 10px;
   height: 100%;
   display: grid;
-  grid-template: 1fr 1fr / 1fr 4fr;
+  grid-template: 1fr 1fr / 1fr 2fr;
+  align-items: center;
+  gap: 10px;
+}
+.RecommendAccount:hover {
+  cursor: pointer;
+  transform: scale(102%);
+  transition: all 0.1s ease-in;
+  border-radius: 10px;
+  background-color: #dadada;
 }
 .RecommendAccount .ProfilePicture {
+  width: 100%;
+  height: 100%;
   grid-row: span 2;
-  width: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.ProfilePicture img {
+  width: 100%;
 }
